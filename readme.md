@@ -4,12 +4,18 @@ Value Compressor
 An experiment in:
 
 1. Writing raw data to disk.
-2. Using specialized compression.
+2. Using specialized compression?
 3. Compressing in-memory streams?
 
 I don't know how to do most of this in Rust, although I'm pretty familiar with a lot of it in C#, so it's been interesting so far.
 
 To view this program's output, try `hexdump -C FILE`.
+
+## Discoveries
+
+1. Not going to bother with specialized compression for the time being because getting the normal stuff working has been such a chore.
+2. There's no such thing as an "in-memory stream" in Rust because byte arrays, slices, and vectors apparently all serve pretty much *exactly* that purpose, which I found pretty cool except that most things expect an array and don't want a vector, which is actually pretty annoying in the grand scheme of things.
+3. That last thing is made somewhat less annoying by the existence of `std::io::copy()`, which lets you skip most of the (awful) drudge work of actually copying data from one stream to another (kind of like what `copy()` does for you in C#, except it's a function instead of a method).
 
 ## Status
 
