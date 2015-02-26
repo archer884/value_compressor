@@ -9,7 +9,7 @@ An experiment in:
 
 I don't know how to do most of this in Rust, although I'm pretty familiar with a lot of it in C#, so it's been interesting so far.
 
-To view this program's output, try `hexdump -C FILE`.
+To view this program's output, try `hexdump -C compress.out` or `hexdump -C uncompress.out`.
 
 ## Discoveries
 
